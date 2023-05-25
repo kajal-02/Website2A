@@ -1,0 +1,16 @@
+git --version
+git init
+git add .
+git status
+git remote add origin"github link"
+git commit -m "first commit"
+git push -u origin master
+
+---------------------------------
+
+second file--
+
+git status
+git add bhagat.txt
+git commit -m "second commit"
+git push -u origin master
