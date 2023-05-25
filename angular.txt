@@ -1,0 +1,55 @@
+command cli:
+  npm --version
+  npm install -g @angular/cli@latest
+  ng new partc2
+Run:
+  cd partc2
+  ng serve
+----------------------------------
+html:
+  <h1>{{title}}</h1>
+<input type="text" #name placeholder="Enter your name" name="name"><br>
+<input type="text" #address placeholder="Enter your Address" name="address"><br>
+<input type="text" #contact placeholder="Enter your contact" name="contact"><br>
+<input type="Email" #email placeholder="Enter your email" name="email"><br>
+<button (click)="getValue(name.value,address.value,contact.value,email.value)">Register</button>
+<h1> Your Registered Data</h1>
+<p>
+  Name:{{displayname}} <br>
+  Address:{{displayadd}} <br>
+  Contact:{{displaycont}} <br>
+  Email:{{displayemail}} <br>
+</p>
+-------------------------------------
+css: 
+  input{
+    width: 400px;
+    height: 25px;
+    margin: 10px;
+    padding: 5px;
+}
+-------------------------------------
+js:
+  import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'Registration Form';
+
+  displayname="";
+  displayadd="";
+  displaycont="";
+  displayemail="";
+  getValue(name:string, address:string,contact:string,email:string)
+  {
+    this.displayname=name;
+    this.displayadd=address;
+    this.displaycont=contact;
+    this.displayemail=email;
+  }
+}
+-----------------------------------------
